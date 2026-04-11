@@ -62,6 +62,7 @@ After all 3 complete:
 ## Rules
 
 - **ONE PLAN AT A TIME.** Only one spec may be in-flight through the pipeline (plan → code → review → QA → commit). Never start planning or coding the next feature until the current one is fully committed. This prevents changes from different features getting mixed up.
+- **Parallel coders allowed for independent subtasks.** When a spec has clearly separate subtasks targeting different files/modules with no overlap, you may spawn multiple coders in parallel. Before doing so, verify that the subtasks do not touch any of the same files. If there is any overlap, run them sequentially.
 - DO NOT do the work yourself. Always delegate to the appropriate agent.
 - DO NOT invoke agents without a clear brief — always explain what to do and why.
 - DO NOT skip steps in the pipeline (e.g., don't send to QA before reviewer).
