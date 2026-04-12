@@ -40,53 +40,7 @@ Files are installed in the current directory. Existing files are never overwritt
 
 ## Pipeline
 
-```mermaid
----
-config:
-  flowchart:
-    curve: linear
----
-graph TD
-    Goal([🎯 Goal]) --> O
-
-    O{🎻 Orchestrator}
-
-    O -->|new project or reprioritize| PM[📋 Product Manager]
-    PM -->|roadmap| O
-
-    O -->|feature needs spec| P[📐 Planner]
-    P -.->|UI feature| D[🎨 Designer]
-    D -.->|design section| P
-    P -->|spec| O
-
-    O -->|spec ready| C[💻 Coder]
-    C -->|code complete| O
-
-    O -->|needs review| R{🔍 Reviewer}
-    R -->|findings| O
-
-    O -->|review passed| QA[🧪 QA]
-    QA -->|report| O
-
-    O -->|fix issues| C
-
-    O -->|pipeline passed| Commit([✅ Commit])
-    Commit --> O
-
-    style O fill:#f59e0b,color:#000
-    style PM fill:#8b5cf6,color:#fff
-    style P fill:#3b82f6,color:#fff
-    style D fill:#ec4899,color:#fff
-    style C fill:#10b981,color:#fff
-    style R fill:#ef4444,color:#fff
-    style QA fill:#06b6d4,color:#fff
-```
-
-```
-Goal → orchestrator → product-manager (roadmap)
-     → orchestrator → planner (+ designer if UI) → coder → reviewer (3-model) → qa
-     → orchestrator → commit → next feature
-```
+![Pipeline](assets/pipeline.svg)
 
 ## Shared Memory
 
