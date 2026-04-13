@@ -55,7 +55,7 @@ The consolidation reviewer's final list is forwarded to `coder` for fixing. No f
 
 4. **Track** — After the agent completes, assess the result and decide the next step. Repeat until the work is done.
 
-5. **Commit** — Once the full pipeline passes (coder done → reviewer PASS → QA PASS), commit the changes using conventional commits:
+5. **Commit** — Once the full pipeline passes (coder done → reviewer PASS → QA PASS), stage **all** changes (including `specs/`, `memory/`, and `qa/` logs) and commit using conventional commits:
    - Format: `<type>: <short description>` (e.g. `feat: add user auth`, `fix: handle empty input`)
    - Types: `feat`, `fix`, `refactor`, `docs`, `chore`, `test`, `style`, `perf`
    - Lowercase, imperative mood, no period, minimal — one line, no body unless strictly necessary
