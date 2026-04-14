@@ -12,7 +12,7 @@ A squad of custom [GitHub Copilot agents](https://code.visualstudio.com/docs/cop
 |-------|------|------|-------|
 | **orchestrator** | Hannibal | Leads the team, delegates to the right agent, commits after pipeline passes | Sonnet 4.6 |
 | **product-manager** | Face | Scopes the mission: feature decomposition, roadmap, priorities | Opus 4.6 |
-| **planner** | Amy | Creates detailed implementation specs with architecture and subtasks | Opus 4.6 |
+| **planner** | Amy | Creates detailed implementation specs with architecture, subtasks, and acceptance scenarios. Cross-validated by a second model. | Opus 4.6 |
 | **designer** | Murdock | Creative UI/UX design using the `frontend-design` skill | Opus 4.6 |
 | **coder** | Baracus | Builds it. Implements features, writes tests, updates docs | Opus 4.6 |
 | **reviewer** | Decker | Adversarial reviews (3× diverse models + Opus 4.6 consolidation) | GPT-5.4, Gemini 3.1 Pro, Opus 4.5 |
@@ -73,9 +73,9 @@ Chrome runs in headless mode in the cloud agent environment. You may also need a
 
 </details>
 
-## Pipeline
+## Workflow
 
-![Pipeline](assets/pipeline.svg)
+![Workflow](assets/workflow.svg)
 
 ## Shared Memory
 
@@ -89,7 +89,7 @@ The agents produce artifacts during the pipeline. These are committed alongside 
 
 | Directory | Contents | Written by |
 |-----------|----------|------------|
-| `specs/` | Implementation specs with architecture, subtasks, and decisions | Planner |
+| `specs/` | Implementation specs with architecture, subtasks, acceptance scenarios, and decisions | Planner |
 | `qa/` | QA test logs — scenarios tested, edge cases, issues found (persists across sessions) | QA |
 | `memory/` | Shared decisions and conventions | All agents |
 
