@@ -15,14 +15,14 @@
     <!-- Vignette gradient -->
     <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
       <stop offset="0%" stop-color="transparent"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
     </radialGradient>
 
     <!-- Background gradient -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="40%" stop-color="#1a1008"/>
-      <stop offset="100%" stop-color="#0a0a0a"/>
+      <stop offset="0%" stop-color="#111114"/>
+      <stop offset="40%" stop-color="#241a0c"/>
+      <stop offset="100%" stop-color="#111114"/>
     </linearGradient>
 
     <!-- Gold gradient for title -->
@@ -35,9 +35,9 @@
     <!-- Stripe gradient -->
     <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="transparent"/>
-      <stop offset="10%" stop-color="#1a3a6b"/>
-      <stop offset="50%" stop-color="#2563a8"/>
-      <stop offset="90%" stop-color="#1a3a6b"/>
+      <stop offset="10%" stop-color="#1f4580"/>
+      <stop offset="50%" stop-color="#2f6fc0"/>
+      <stop offset="90%" stop-color="#1f4580"/>
       <stop offset="100%" stop-color="transparent"/>
     </linearGradient>
 
@@ -63,7 +63,7 @@
 
   <!-- Subtle halftone-like dots pattern -->
   <pattern id="dots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-    <circle cx="6" cy="6" r="0.8" fill="#ffffff" opacity="0.04"/>
+    <circle cx="6" cy="6" r="0.8" fill="#ffffff" opacity="0.06"/>
   </pattern>
   <rect width="1200" height="400" fill="url(#dots)"/>
 
@@ -424,11 +424,11 @@
 
   <!-- Title above figures -->
   <text x="600" y="45" font-family="'Black Ops One', 'Impact', sans-serif" font-size="42" fill="url(#gold)" text-anchor="middle" letter-spacing="8">THE A-TEAM</text>
-  <text x="600" y="65" font-family="'Oswald', sans-serif" font-size="13" font-weight="300" fill="#aaa" text-anchor="middle" letter-spacing="4">AUTONOMOUS COPILOT AGENT SQUAD</text>
+  <text x="600" y="65" font-family="'Oswald', sans-serif" font-size="13" font-weight="300" fill="#ccc" text-anchor="middle" letter-spacing="4">AUTONOMOUS COPILOT AGENT SQUAD</text>
 
   <!-- Vignette overlay -->
   <rect width="1200" height="400" fill="url(#vignette)"/>
 
   <!-- Grain overlay -->
-  <rect width="1200" height="400" fill="#888" opacity="0.04" filter="url(#grain)"/>
+  <rect width="1200" height="400" fill="#888" opacity="0.03" filter="url(#grain)"/>
 </svg>
