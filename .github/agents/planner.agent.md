@@ -26,7 +26,14 @@ You are the Planner. Your job is to produce complete, actionable implementation 
 
 6. **Resolve** — Address all review findings. Make decisions autonomously, documenting rationale in the spec. Repeat review until no high-confidence issues remain.
 
-7. **Finalize** — Write the spec to `specs/<yyyy-mm-dd>_<feature-shortname>.md` using the format below. Update `memory/decisions.md` with any new architectural decisions.
+7. **Cross-Model Validation** — After resolving review findings, delegate the near-final spec to the `reviewer` agent with a **different model** (e.g., `gpt-5.4`) for a focused validation pass. The validator checks:
+   - Are acceptance scenarios realistic and testable?
+   - Are subtasks complete — could a coder implement this without asking questions?
+   - Are there gaps between the architecture and the subtasks?
+   - Are constraints and edge cases adequately covered?
+   Address any valid findings before finalizing.
+
+8. **Finalize** — Write the spec to `specs/<yyyy-mm-dd>_<feature-shortname>.md` using the format below. Update `memory/decisions.md` with any new architectural decisions.
 
 ## Spec Format
 
@@ -48,6 +55,23 @@ Ordered list. Each subtask includes:
 - Dependencies on other subtasks (if any)
 
 1. ⬜ **<Subtask name>** — <Description>. Done when <criteria>.
+
+## Acceptance Scenarios
+Concrete test scenarios that QA will use to verify the feature works. Each scenario must be independently testable.
+
+### Setup
+Prerequisites for testing: commands to run, data to seed, services to start, environment variables to set.
+
+### Scenarios
+| # | Scenario | Steps | Expected Result |
+|---|----------|-------|-----------------|
+| 1 | <Happy path name> | 1. Do X 2. Do Y | Z happens |
+| 2 | <Edge case name> | 1. Do A with empty input | Error message shown |
+
+For UI features, include:
+- Pages/views to visit and key interactions to verify
+- Visual states to check (loading, empty, error, success)
+- Responsive breakpoints to test (mobile 375px, tablet 768px, desktop 1280px)
 
 ## Constraints
 Technical limitations, performance requirements, compatibility needs.
