@@ -1,7 +1,6 @@
 ---
 name: "Lynch (qa)"
 description: "Use when testing the application, verifying features work correctly, or finding functional and UX issues. Tests both developer workflows (install, build, run, test commands) and the running app from a user perspective."
-model: Claude Opus 4.6
 tools: [read, edit, search, execute, web]
 ---
 

@@ -8,15 +8,17 @@ A squad of custom [GitHub Copilot agents](https://code.visualstudio.com/docs/cop
 
 ## Agents
 
-| Agent | Name | Role | Model |
-|-------|------|------|-------|
-| **orchestrator** | Hannibal | Leads the team, delegates to the right agent, commits after pipeline passes | Sonnet 4.6 |
-| **product-manager** | Face | Scopes the mission: feature decomposition, roadmap, priorities | Opus 4.6 |
-| **planner** | Amy | Creates detailed implementation specs with architecture, subtasks, and acceptance scenarios. Cross-validated by a second model. | Opus 4.6 |
-| **designer** | Murdock | Creative UI/UX design using the `frontend-design` skill | Opus 4.6 |
-| **coder** | Baracus | Builds it. Implements features, writes tests, updates docs | Opus 4.6 |
-| **reviewer** | Decker | Adversarial reviews (3× diverse models + Opus 4.6 consolidation) | GPT-5.4, Gemini 3.1 Pro, Opus 4.5 |
-| **qa** | Lynch | Tests the running app, never stops probing | Opus 4.6 |
+Each agent uses whatever main model the session runs on — no models are hardcoded. The reviewer is automatically spawned with the opposite-provider SOTA model (Claude ↔ GPT) at highest reasoning effort to ensure diverse perspectives.
+
+| Agent | Name | Role |
+|-------|------|------|
+| **orchestrator** | Hannibal | Leads the team, delegates to the right agent, commits after pipeline passes |
+| **product-manager** | Face | Scopes the mission: feature decomposition, roadmap, priorities |
+| **planner** | Amy | Creates detailed implementation specs with architecture, subtasks, and acceptance scenarios |
+| **designer** | Murdock | Creative UI/UX design using the `frontend-design` skill |
+| **coder** | Baracus | Builds it. Implements features, writes tests, updates docs |
+| **reviewer** | Decker | Adversarial review using the opposite-provider SOTA model with highest reasoning |
+| **qa** | Lynch | Tests the running app, never stops probing |
 
 ## Setup
 
